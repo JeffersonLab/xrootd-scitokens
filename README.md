@@ -19,6 +19,9 @@ apptainer exec docker://wmoore28/xrootd-scitokens:latest bash
 Once the container is running, proceed to the next sections for things to test.
 
 ## How to get a token
+It's important to note the issuer and role will be different depending on
+which project you are associated with. While the below snippets are examples,
+you'll need to know those specifics for the commands to work correctly.
 ```
 # Usage: htgettoken -a <vault fqdn> -i <issuer> -r <role>
 
