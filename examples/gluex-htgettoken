@@ -1,0 +1,4 @@
+#!/bin/sh -x
+
+htgettoken -v -a htvault.jlab.org -i jlab -r gluex
+httokendecode -H

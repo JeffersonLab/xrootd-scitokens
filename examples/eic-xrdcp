@@ -1,0 +1,12 @@
+#!/bin/sh -x
+
+htgettoken -v -a htvault.jlab.org -i eic
+httokendecode -H
+
+# As of v5.5.1, xrdcp fails to find token, so we set it
+export BEARER_TOKEN_FILE=/tmp/bt_u${UID}
+
+tmpfile=$(mktemp /tmp/eic-xrdcp.XXXXXX)
+hostname > $tmpfile
+date >> $tmpfile
+xrdcp -d1 -f $tmpfile roots://dtn2201.jlab.org//eic/eic2/transfer/
